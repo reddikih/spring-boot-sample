@@ -1,4 +1,4 @@
-package com.sample.appserver.authentication;
+package com.sample.appserver.application;
 
 /**
  * Created by satoshi on 2017/11/07.
