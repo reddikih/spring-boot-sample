@@ -1,4 +1,4 @@
-package com.sample.appserver.authentication;
+package com.sample.appserver.application;
 
 import org.springframework.web.bind.annotation.*;
 

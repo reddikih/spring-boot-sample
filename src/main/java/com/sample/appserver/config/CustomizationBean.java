@@ -9,7 +9,7 @@ import org.springframework.stereotype.*;
  */
 @Component
 public class CustomizationBean implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
-	private static final int APP_SERVER_PORT = 8801;
+	private static final int APP_SERVER_PORT = 8809;
 	@Override
 	public void customize(ConfigurableServletWebServerFactory server) {
 		server.setPort(APP_SERVER_PORT);
