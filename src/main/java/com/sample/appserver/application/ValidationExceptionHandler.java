@@ -22,25 +22,29 @@ public class ValidationExceptionHandler extends ResponseEntityExceptionHandler {
       HttpHeaders headers, HttpStatus status, WebRequest request) {
     BindingResult bindingResult = ex.getBindingResult();
 
-    List<ApiFieldError> fieldErrors = bindingResult.getFieldErrors().stream().map(fe -> new ApiFieldError(
-        fe.getField(),
-        fe.getCode(),
-        fe.getRejectedValue(),
-        fe.getDefaultMessage()
-    )).collect(Collectors.toList());
+    List<ApiFieldError> fieldErrors = bindingResult.getFieldErrors().stream()
+        .map(fe -> new ApiFieldError(
+            fe.getField(),
+            fe.getCode(),
+            fe.getRejectedValue(),
+            fe.getDefaultMessage()
+        )).collect(Collectors.toList());
 
     ApiErrorsView errorsView = new ApiErrorsView(fieldErrors);
     return new ResponseEntity<>(errorsView, HttpStatus.UNPROCESSABLE_ENTITY);
   }
 
   public static class ApiErrorsView {
+
     public List<ApiFieldError> fieldErrors;
+
     public ApiErrorsView(List<ApiFieldError> fieldErrors) {
       this.fieldErrors = fieldErrors;
     }
   }
 
   public static class ApiFieldError {
+
     public String field;
     public String code;
     public Object rejectedValue;

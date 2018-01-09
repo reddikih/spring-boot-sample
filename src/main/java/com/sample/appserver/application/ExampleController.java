@@ -18,22 +18,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExampleController {
 
   private final static Logger LOGGER = LoggerFactory.getLogger(ExampleController.class);
+  @Autowired
+  BCryptSample bcrypt;
 
   @RequestMapping(method = GET, path = "/example")
   public String example() {
     return "Hello Example!\n";
   }
 
-  @Autowired
-  BCryptSample bcrypt;
-
   /**
    * Usage:
    *
    * <pre>
-   *   $ curl -XPOST -s -H 'Content-type:application/json' -s http://localhost:8809/bcrypt -d 'abcd1234'
+   *   $ curl -XPOST -s -H 'Content-type:application/json' -s http://localhost:8809/bcrypt -d
+   * 'abcd1234'
    *   $2a$10$OIqS41bZDbBAaRM2rvAqHuGFQzR9ufMvtyWN7e/P7.n8eEkNNuQUG
    * </pre>
+   *
    * @param msg a parameter to be encoded by BCrypt.
    * @return hashed msg.
    */
