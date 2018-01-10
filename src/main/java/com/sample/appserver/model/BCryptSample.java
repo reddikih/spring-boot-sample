@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class BCryptSample {
+
   private static final Logger LOGGER = LoggerFactory.getLogger(BCryptSample.class);
 
   @Autowired

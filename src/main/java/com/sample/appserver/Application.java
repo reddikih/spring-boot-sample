@@ -1,10 +1,7 @@
 package com.sample.appserver;
 
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Created by satoshi on 2017/11/07.
@@ -17,7 +14,7 @@ public class Application {
 //		return new BCryptPasswordEncoder();
 //	}
 
-	public static void main(String ... args) {
-		SpringApplication.run(Application.class, args);
-	}
+  public static void main(String... args) {
+    SpringApplication.run(Application.class, args);
+  }
 }
