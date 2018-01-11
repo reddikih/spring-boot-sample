@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 public class UserCredential {
 
   @NotNull
-  @Size(min = 4, max = 15)
+  @Size(min = 4, max = 15, message = "{test.user.credential.size.message}")
   @Pattern(regexp = "[0-9a-zA-Z_]+")
   @JsonProperty("user_id")
   public String userId;
