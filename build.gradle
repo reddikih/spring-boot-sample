@@ -35,6 +35,10 @@ dependencies {
 
     // this is needed to use BCrypt hash algorithm.
     compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.0.0.RELEASE'
+
+    // this is for redis
+    compile('org.springframework.boot:spring-boot-starter-data-redis')
+
 	testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
